@@ -1,0 +1,19 @@
+<!-- Executam de forma assincronas e isso não faz o programa parar, executa em 'background' -->
+
+<html>
+    <head>
+            <title>Promisses</title>
+    </head>
+
+    <body>
+        <script>
+            //Essa resposta é uma promisse, imagine que essa requisição possa demorar, e o programa irá ficar travado, por isso, ela é uma promisse e não trava
+            const resposta = fetch('http://api.postmon.com.br/v1/cep/86020030'); //faz um requisição http, possui somente no browser
+            
+            resposta.then(data => data.json())
+                .then(data => {console.log(data)})
+                .catch(erro => { console.log(erro)})
+                ; //executa só quando receber a resposta
+        </script>
+    </body>
+</html>
